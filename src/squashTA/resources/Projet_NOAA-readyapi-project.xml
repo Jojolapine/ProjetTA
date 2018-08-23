@@ -1,0 +1,741 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="0f0ebecf-bd39-42be-90c4-17265e91ee7d" activeEnvironment="Default environment" name="Projet_NOAA" resourceRoot="${projectDir}" soapui-version="5.4.0" abortOnError="false" runType="SEQUENTIAL" encryptionMode="Not encrypted" updated="2.4.0 2018-06-08T12:50:23Z" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="14783cf4-8541-4e1e-851c-a21119a1386f" wsaVersion="NONE" name="ndfdXMLBinding" type="wsdl" bindingName="{https://graphical.weather.gov/xml/DWMLgen/wsdl/ndfdXML.wsdl}ndfdXMLBinding" soapVersion="1_1" anonymous="optional" definition="https://graphical.weather.gov/xml/SOAP_server/ndfdXMLserver.php?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings><con:setting id="CreateWsdlDocumentationAction@report-directory">C:\Installation\SmartBear\SoapUI-5.4.0\bin</con:setting></con:settings><con:definitionCache type="TEXT" rootPart="https://graphical.weather.gov/xml/SOAP_server/ndfdXMLserver.php?wsdl"><con:part><con:url>https://graphical.weather.gov/xml/SOAP_server/ndfdXMLserver.php?wsdl</con:url><con:content><![CDATA[<definitions targetNamespace="https://graphical.weather.gov/xml/DWMLgen/wsdl/ndfdXML.wsdl" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="https://graphical.weather.gov/xml/DWMLgen/wsdl/ndfdXML.wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xsd:schema targetNamespace="https://graphical.weather.gov/xml/DWMLgen/wsdl/ndfdXML.wsdl">
+      <xsd:import namespace="http://schemas.xmlsoap.org/soap/encoding/"/>
+      <xsd:import namespace="http://schemas.xmlsoap.org/wsdl/"/>
+      <xsd:complexType name="weatherParametersType">
+        <xsd:all>
+          <xsd:element name="maxt" type="xsd:boolean"/>
+          <xsd:element name="mint" type="xsd:boolean"/>
+          <xsd:element name="temp" type="xsd:boolean"/>
+          <xsd:element name="dew" type="xsd:boolean"/>
+          <xsd:element name="pop12" type="xsd:boolean"/>
+          <xsd:element name="qpf" type="xsd:boolean"/>
+          <xsd:element name="sky" type="xsd:boolean"/>
+          <xsd:element name="snow" type="xsd:boolean"/>
+          <xsd:element name="wspd" type="xsd:boolean"/>
+          <xsd:element name="wdir" type="xsd:boolean"/>
+          <xsd:element name="wx" type="xsd:boolean"/>
+          <xsd:element name="waveh" type="xsd:boolean"/>
+          <xsd:element name="icons" type="xsd:boolean"/>
+          <xsd:element name="rh" type="xsd:boolean"/>
+          <xsd:element name="appt" type="xsd:boolean"/>
+          <xsd:element name="incw34" type="xsd:boolean"/>
+          <xsd:element name="incw50" type="xsd:boolean"/>
+          <xsd:element name="incw64" type="xsd:boolean"/>
+          <xsd:element name="cumw34" type="xsd:boolean"/>
+          <xsd:element name="cumw50" type="xsd:boolean"/>
+          <xsd:element name="cumw64" type="xsd:boolean"/>
+          <xsd:element name="critfireo" type="xsd:boolean"/>
+          <xsd:element name="dryfireo" type="xsd:boolean"/>
+          <xsd:element name="conhazo" type="xsd:boolean"/>
+          <xsd:element name="ptornado" type="xsd:boolean"/>
+          <xsd:element name="phail" type="xsd:boolean"/>
+          <xsd:element name="ptstmwinds" type="xsd:boolean"/>
+          <xsd:element name="pxtornado" type="xsd:boolean"/>
+          <xsd:element name="pxhail" type="xsd:boolean"/>
+          <xsd:element name="pxtstmwinds" type="xsd:boolean"/>
+          <xsd:element name="ptotsvrtstm" type="xsd:boolean"/>
+          <xsd:element name="pxtotsvrtstm" type="xsd:boolean"/>
+          <xsd:element name="tmpabv14d" type="xsd:boolean"/>
+          <xsd:element name="tmpblw14d" type="xsd:boolean"/>
+          <xsd:element name="tmpabv30d" type="xsd:boolean"/>
+          <xsd:element name="tmpblw30d" type="xsd:boolean"/>
+          <xsd:element name="tmpabv90d" type="xsd:boolean"/>
+          <xsd:element name="tmpblw90d" type="xsd:boolean"/>
+          <xsd:element name="prcpabv14d" type="xsd:boolean"/>
+          <xsd:element name="prcpblw14d" type="xsd:boolean"/>
+          <xsd:element name="prcpabv30d" type="xsd:boolean"/>
+          <xsd:element name="prcpblw30d" type="xsd:boolean"/>
+          <xsd:element name="prcpabv90d" type="xsd:boolean"/>
+          <xsd:element name="prcpblw90d" type="xsd:boolean"/>
+          <xsd:element name="precipa_r" type="xsd:boolean"/>
+          <xsd:element name="sky_r" type="xsd:boolean"/>
+          <xsd:element name="temp_r" type="xsd:boolean"/>
+          <xsd:element name="td_r" type="xsd:boolean"/>
+          <xsd:element name="wdir_r" type="xsd:boolean"/>
+          <xsd:element name="wspd_r" type="xsd:boolean"/>
+          <xsd:element name="wwa" type="xsd:boolean"/>
+          <xsd:element name="wgust" type="xsd:boolean"/>
+          <xsd:element name="iceaccum" type="xsd:boolean"/>
+        </xsd:all>
+      </xsd:complexType>
+    </xsd:schema>
+  </types>
+  <message name="NDFDgenRequest">
+    <part name="latitude" type="xsd:decimal"/>
+    <part name="longitude" type="xsd:decimal"/>
+    <part name="product" type="xsd:string"/>
+    <part name="startTime" type="xsd:dateTime"/>
+    <part name="endTime" type="xsd:dateTime"/>
+    <part name="Unit" type="xsd:string"/>
+    <part name="weatherParameters" type="tns:weatherParametersType"/>
+  </message>
+  <message name="NDFDgenResponse">
+    <part name="dwmlOut" type="xsd:string"/>
+  </message>
+  <message name="NDFDgenLatLonListRequest">
+    <part name="listLatLon" type="xsd:string"/>
+    <part name="product" type="xsd:string"/>
+    <part name="startTime" type="xsd:dateTime"/>
+    <part name="endTime" type="xsd:dateTime"/>
+    <part name="Unit" type="xsd:string"/>
+    <part name="weatherParameters" type="tns:weatherParametersType"/>
+  </message>
+  <message name="NDFDgenLatLonListResponse">
+    <part name="dwmlOut" type="xsd:string"/>
+  </message>
+  <message name="LatLonListSubgridRequest">
+    <part name="lowerLeftLatitude" type="xsd:decimal"/>
+    <part name="lowerLeftLongitude" type="xsd:decimal"/>
+    <part name="upperRightLatitude" type="xsd:decimal"/>
+    <part name="upperRightLongitude" type="xsd:decimal"/>
+    <part name="resolution" type="xsd:decimal"/>
+  </message>
+  <message name="LatLonListSubgridResponse">
+    <part name="listLatLonOut" type="xsd:string"/>
+  </message>
+  <message name="LatLonListLineRequest">
+    <part name="endPoint1Lat" type="xsd:decimal"/>
+    <part name="endPoint1Lon" type="xsd:decimal"/>
+    <part name="endPoint2Lat" type="xsd:decimal"/>
+    <part name="endPoint2Lon" type="xsd:decimal"/>
+  </message>
+  <message name="LatLonListLineResponse">
+    <part name="listLatLonOut" type="xsd:string"/>
+  </message>
+  <message name="LatLonListZipCodeRequest">
+    <part name="zipCodeList" type="xsd:string"/>
+  </message>
+  <message name="LatLonListZipCodeResponse">
+    <part name="listLatLonOut" type="xsd:string"/>
+  </message>
+  <message name="LatLonListCityNamesRequest">
+    <part name="displayLevel" type="xsd:integer"/>
+  </message>
+  <message name="LatLonListCityNamesResponse">
+    <part name="listLatLonOut" type="xsd:string"/>
+  </message>
+  <message name="LatLonListSquareRequest">
+    <part name="centerPointLat" type="xsd:decimal"/>
+    <part name="centerPointLon" type="xsd:decimal"/>
+    <part name="distanceLat" type="xsd:decimal"/>
+    <part name="distanceLon" type="xsd:decimal"/>
+    <part name="resolution" type="xsd:decimal"/>
+  </message>
+  <message name="LatLonListSquareResponse">
+    <part name="listLatLonOut" type="xsd:string"/>
+  </message>
+  <message name="CornerPointsRequest">
+    <part name="sector" type="xsd:string"/>
+  </message>
+  <message name="CornerPointsResponse">
+    <part name="listLatLonOut" type="xsd:string"/>
+  </message>
+  <message name="GmlLatLonListRequest">
+    <part name="listLatLon" type="xsd:string"/>
+    <part name="requestedTime" type="xsd:dateTime"/>
+    <part name="featureType" type="xsd:string"/>
+    <part name="weatherParameters" type="tns:weatherParametersType"/>
+  </message>
+  <message name="GmlLatLonListResponse">
+    <part name="dwGmlOut" type="xsd:string"/>
+  </message>
+  <message name="GmlTimeSeriesRequest">
+    <part name="listLatLon" type="xsd:string"/>
+    <part name="startTime" type="xsd:dateTime"/>
+    <part name="endTime" type="xsd:dateTime"/>
+    <part name="compType" type="xsd:string"/>
+    <part name="featureType" type="xsd:string"/>
+    <part name="propertyName" type="xsd:string"/>
+  </message>
+  <message name="GmlTimeSeriesResponse">
+    <part name="dwGmlOut" type="xsd:string"/>
+  </message>
+  <message name="NDFDgenByDayRequest">
+    <part name="latitude" type="xsd:decimal"/>
+    <part name="longitude" type="xsd:decimal"/>
+    <part name="startDate" type="xsd:date"/>
+    <part name="numDays" type="xsd:integer"/>
+    <part name="Unit" type="xsd:string"/>
+    <part name="format" type="xsd:string"/>
+  </message>
+  <message name="NDFDgenByDayResponse">
+    <part name="dwmlByDayOut" type="xsd:string"/>
+  </message>
+  <message name="NDFDgenByDayLatLonListRequest">
+    <part name="listLatLon" type="xsd:string"/>
+    <part name="startDate" type="xsd:date"/>
+    <part name="numDays" type="xsd:integer"/>
+    <part name="Unit" type="xsd:string"/>
+    <part name="format" type="xsd:string"/>
+  </message>
+  <message name="NDFDgenByDayLatLonListResponse">
+    <part name="dwmlByDayOut" type="xsd:string"/>
+  </message>
+  <portType name="ndfdXMLPortType">
+    <operation name="NDFDgen">
+      <documentation>Returns National Weather Service digital weather forecast data.  Supports latitudes and longitudes for the Continental United States, Alaska, Hawaii, Guam, and Puerto Rico only. Allowable values for the input variable "product" are "time-series" and "glance". Allowable values for the input variable "Unit" are "e" for U.S. Standare/English units and "m" for Metric units. For both products, a start and end time (Local) are required.  For the time-series product, the input variable "weatherParameters" has array elements set to "true" to indicate which weather parameters are being requested.  If an array element is set to "false", data for that weather parameter are not to be returned.</documentation>
+      <input message="tns:NDFDgenRequest"/>
+      <output message="tns:NDFDgenResponse"/>
+    </operation>
+    <operation name="NDFDgenLatLonList">
+      <documentation>Returns National Weather Service digital weather forecast data.  Supports latitudes and longitudes for the Continental United States, Alaska, Hawaii, Guam, and Puerto Rico only.  The latitude and longitude are delimited by a comma and multiple pairs are delimited by a space (i.e. 30.00,-77.00 40.00,-90.00). Allowable values for the input variable "product" are "time-series" and "glance". Allowable values for the input variable "Unit" are "e" for U.S. Standare/English units and "m" for Metric units. For both products, a start and end time (Local) are required. For both products, a start and end time (Local) are required.  For the time-series product, the input variable "weatherParameters" has array elements set to "true" to indicate which weather parameters are being requested.  If an array element is set to "false", data for that weather parameter are not to be returned.</documentation>
+      <input message="tns:NDFDgenLatLonListRequest"/>
+      <output message="tns:NDFDgenLatLonListResponse"/>
+    </operation>
+    <operation name="LatLonListSubgrid">
+      <documentation>Returns a list of Latitude and longitude pairs for a rectangle defined by its lower left and upper right points.  Provides points in a format suitable for use in calling multi-point functions NDFDgenLatLonList and NDFDgenByDayLatLonList.  Supports latitudes and longitudes for the Continental United States, Alaska, Hawaii, Guam, and Puerto Rico.</documentation>
+      <input message="tns:LatLonListSubgridRequest"/>
+      <output message="tns:LatLonListSubgridResponse"/>
+    </operation>
+    <operation name="LatLonListLine">
+      <documentation>Returns a list of latitude and longitude pairs along a line defined by two points.  Supports latitudes and longitudes for the Continental United States, Alaska, Hawaii, Guam, and Puerto Rico only.  Provides points in a format suitable for use in calling multi-point functions NDFDgenLatLonList and NDFDgenByDayLatLonList.</documentation>
+      <input message="tns:LatLonListLineRequest"/>
+      <output message="tns:LatLonListLineResponse"/>
+    </operation>
+    <operation name="LatLonListZipCode">
+      <documentation>Returns the latitude and longitude pairs corresponding to a list of one or more zip codes.  Supports zip codes for the Continental United States, Alaska, Hawaii, and Puerto Rico only. Provides points in a format suitable for use in calling multi-point functions NDFDgenLatLonList and NDFDgenByDayLatLonList.</documentation>
+      <input message="tns:LatLonListZipCodeRequest"/>
+      <output message="tns:LatLonListZipCodeResponse"/>
+    </operation>
+    <operation name="LatLonListCityNames">
+      <documentation>Returns the latitude and longitude pairs corresponding to a predefined list of US cities.  Provides points in a format suitable for use in calling multi-point functions NDFDgenLatLonList and NDFDgenByDayLatLonList.  The response also includes a list of city names with the order of the names matching the order of the corresponding point.</documentation>
+      <input message="tns:LatLonListCityNamesRequest"/>
+      <output message="tns:LatLonListCityNamesResponse"/>
+    </operation>
+    <operation name="LatLonListSquare">
+      <documentation>Returns a list of latitude and longitude pairs in a rectangle defined by a central point and distance from that point in the latitudinal and longitudinal directions.  Supports latitudes and longitudes for the Continental United States, Alaska, Hawaii, Guam, and Puerto Rico only.  Provides points in a format suitable for use in calling multi-point functions NDFDgenLatLonList and NDFDgenByDayLatLonList.</documentation>
+      <input message="tns:LatLonListSquareRequest"/>
+      <output message="tns:LatLonListSquareResponse"/>
+    </operation>
+    <operation name="CornerPoints">
+      <documentation>Returns latitude and longitude pairs of the four corners of an NDFD grid.  Provides points in a format suitable for use in calling multi-point functions NDFDgenLatLonList and NDFDgenByDayLatLonList.  Supports latitudes and longitudes for the Continental United States, Hawaii, Guam, and Puerto Rico only.  Also provides a minimum resolution for requesting the grid.</documentation>
+      <input message="tns:CornerPointsRequest"/>
+      <output message="tns:CornerPointsResponse"/>
+    </operation>
+    <operation name="GmlLatLonList">
+      <documentation>Returns National Weather Service digital weather forecast data encoded in GML.  Supports latitudes and longitudes for the Continental United States, Alaska, Hawaii, Guam, and Puerto Rico only.  The latitude and longitude are delimited by a comma and multiple pairs are delimited by a space (i.e. 30.00,-77.00 40.00,-90.00). Allowable values for the input variable "featureType" are "Forecast_Gml2Point", "Forecast_GmlObs", "NdfdMultiPointCoverage", "Ndfd_KmlPoint", and "Forecast_GmlsfPoint".  For all feature types a time (UTC) is required to indicate when data is requested.  The input variable "weatherParameters" has array elements set to "true" to indicate which weather parameters are being requested.  If an array element is set to "false", data for that weather parameter are not to be returned.</documentation>
+      <input message="tns:GmlLatLonListRequest"/>
+      <output message="tns:GmlLatLonListResponse"/>
+    </operation>
+    <operation name="GmlTimeSeries">
+      <documentation>Returns National Weather Service digital weather forecast data encoded in GML.  Supports latitudes and longitudes for the Continental United States, Alaska, Hawaii, Guam, and Puerto Rico only.  The latitude and longitude are delimited by a comma and multiple pairs are delimited by a space (i.e. 30.00,-77.00 40.00,-90.00). Allowable values for the input variable "featureType" are "Forecast_Gml2Point", "Forecast_GmlObs", "NdfdMultiPointCoverage", "Ndfd_KmlPoint", and "Forecast_GmlsfPoint".  For all feature types a start and end time (UTC) is required to indicate when data is requested.  a comparison type (IsEqual, Between, GreaterThan, GreaterThan, GreaterThanEqualTo, LessThan, and  LessThanEqualTo). The input variable "propertyName" contains a comma delimited string of NDFD element to indicate which weather parameters are being requested.</documentation>
+      <input message="tns:GmlTimeSeriesRequest"/>
+      <output message="tns:GmlTimeSeriesResponse"/>
+    </operation>
+    <operation name="NDFDgenByDay">
+      <documentation>Returns National Weather Service digital weather forecast data.  Supports latitudes and longitudes for the Continental United States, Hawaii, Guam, and Puerto Rico only.  Allowable values for the input variable "format" are "24 hourly" and "12 hourly".  The input variable "startDate" is a date string representing the first day (Local) of data to be returned. The input variable "numDays" is the integer number of days for which the user wants data. Allowable values for the input variable "Unit" are "e" for U.S. Standare/English units and "m" for Metric units.</documentation>
+      <input message="tns:NDFDgenByDayRequest"/>
+      <output message="tns:NDFDgenByDayResponse"/>
+    </operation>
+    <operation name="NDFDgenByDayLatLonList">
+      <documentation>Returns National Weather Service digital weather forecast data.  Supports latitudes and longitudes for the Continental United States, Hawaii, Guam, and Puerto Rico only.  The latitude and longitude are delimited by a comma and multiple pairs are delimited by a space (i.e. 30.00,-77.00 40.00,-90.00). Allowable values for the input variable "format" are "24 hourly" and "12 hourly".  The input variable "startDate" is a date string representing the first day (Local) of data to be returned. The input variable "numDays" is the integer number of days for which the user wants data. Allowable values for the input variable "Unit" are "e" for U.S. Standare/English units and "m" for Metric units.</documentation>
+      <input message="tns:NDFDgenByDayLatLonListRequest"/>
+      <output message="tns:NDFDgenByDayLatLonListResponse"/>
+    </operation>
+  </portType>
+  <binding name="ndfdXMLBinding" type="tns:ndfdXMLPortType">
+    <soap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <operation name="NDFDgen">
+      <soap:operation soapAction="https://graphical.weather.gov/xml/DWMLgen/wsdl/ndfdXML.wsdl#NDFDgen" style="rpc"/>
+      <input>
+        <soap:body use="encoded" namespace="https://graphical.weather.gov/xml/DWMLgen/wsdl/ndfdXML.wsdl" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="https://graphical.weather.gov/xml/DWMLgen/wsdl/ndfdXML.wsdl" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </output>
+    </operation>
+    <operation name="NDFDgenLatLonList">
+      <soap:operation soapAction="https://graphical.weather.gov/xml/DWMLgen/wsdl/ndfdXML.wsdl#NDFDgenLatLonList" style="rpc"/>
+      <input>
+        <soap:body use="encoded" namespace="https://graphical.weather.gov/xml/DWMLgen/wsdl/ndfdXML.wsdl" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="https://graphical.weather.gov/xml/DWMLgen/wsdl/ndfdXML.wsdl" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </output>
+    </operation>
+    <operation name="LatLonListSubgrid">
+      <soap:operation soapAction="https://graphical.weather.gov/xml/DWMLgen/wsdl/ndfdXML.wsdl#LatLonListSubgrid" style="rpc"/>
+      <input>
+        <soap:body use="encoded" namespace="https://graphical.weather.gov/xml/DWMLgen/wsdl/ndfdXML.wsdl" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="https://graphical.weather.gov/xml/DWMLgen/wsdl/ndfdXML.wsdl" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </output>
+    </operation>
+    <operation name="LatLonListLine">
+      <soap:operation soapAction="https://graphical.weather.gov/xml/DWMLgen/wsdl/ndfdXML.wsdl#LatLonListLine" style="rpc"/>
+      <input>
+        <soap:body use="encoded" namespace="https://graphical.weather.gov/xml/DWMLgen/wsdl/ndfdXML.wsdl" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="https://graphical.weather.gov/xml/DWMLgen/wsdl/ndfdXML.wsdl" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </output>
+    </operation>
+    <operation name="LatLonListZipCode">
+      <soap:operation soapAction="https://graphical.weather.gov/xml/DWMLgen/wsdl/ndfdXML.wsdl#LatLonListZipCode" style="rpc"/>
+      <input>
+        <soap:body use="encoded" namespace="https://graphical.weather.gov/xml/DWMLgen/wsdl/ndfdXML.wsdl" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="https://graphical.weather.gov/xml/DWMLgen/wsdl/ndfdXML.wsdl" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </output>
+    </operation>
+    <operation name="LatLonListCityNames">
+      <soap:operation soapAction="https://graphical.weather.gov/xml/DWMLgen/wsdl/ndfdXML.wsdl#LatLonListCityNames" style="rpc"/>
+      <input>
+        <soap:body use="encoded" namespace="https://graphical.weather.gov/xml/DWMLgen/wsdl/ndfdXML.wsdl" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="https://graphical.weather.gov/xml/DWMLgen/wsdl/ndfdXML.wsdl" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </output>
+    </operation>
+    <operation name="LatLonListSquare">
+      <soap:operation soapAction="https://graphical.weather.gov/xml/DWMLgen/wsdl/ndfdXML.wsdl#LatLonListSquare" style="rpc"/>
+      <input>
+        <soap:body use="encoded" namespace="https://graphical.weather.gov/xml/DWMLgen/wsdl/ndfdXML.wsdl" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="https://graphical.weather.gov/xml/DWMLgen/wsdl/ndfdXML.wsdl" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </output>
+    </operation>
+    <operation name="CornerPoints">
+      <soap:operation soapAction="https://graphical.weather.gov/xml/DWMLgen/wsdl/ndfdXML.wsdl#CornerPoints" style="rpc"/>
+      <input>
+        <soap:body use="encoded" namespace="https://graphical.weather.gov/xml/DWMLgen/wsdl/ndfdXML.wsdl" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="https://graphical.weather.gov/xml/DWMLgen/wsdl/ndfdXML.wsdl" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </output>
+    </operation>
+    <operation name="GmlLatLonList">
+      <soap:operation soapAction="https://graphical.weather.gov/xml/DWMLgen/wsdl/ndfdXML.wsdl#GmlLatLonList" style="rpc"/>
+      <input>
+        <soap:body use="encoded" namespace="https://graphical.weather.gov/xml/DWMLgen/wsdl/ndfdXML.wsdl" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="https://graphical.weather.gov/xml/DWMLgen/wsdl/ndfdXML.wsdl" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </output>
+    </operation>
+    <operation name="GmlTimeSeries">
+      <soap:operation soapAction="https://graphical.weather.gov/xml/DWMLgen/wsdl/ndfdXML.wsdl#GmlTimeSeries" style="rpc"/>
+      <input>
+        <soap:body use="encoded" namespace="https://graphical.weather.gov/xml/DWMLgen/wsdl/ndfdXML.wsdl" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="https://graphical.weather.gov/xml/DWMLgen/wsdl/ndfdXML.wsdl" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </output>
+    </operation>
+    <operation name="NDFDgenByDay">
+      <soap:operation soapAction="https://graphical.weather.gov/xml/DWMLgen/wsdl/ndfdXML.wsdl#NDFDgenByDay" style="rpc"/>
+      <input>
+        <soap:body use="encoded" namespace="https://graphical.weather.gov/xml/DWMLgen/wsdl/ndfdXML.wsdl" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="https://graphical.weather.gov/xml/DWMLgen/wsdl/ndfdXML.wsdl" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </output>
+    </operation>
+    <operation name="NDFDgenByDayLatLonList">
+      <soap:operation soapAction="https://graphical.weather.gov/xml/DWMLgen/wsdl/ndfdXML.wsdl#NDFDgenByDayLatLonList" style="rpc"/>
+      <input>
+        <soap:body use="encoded" namespace="https://graphical.weather.gov/xml/DWMLgen/wsdl/ndfdXML.wsdl" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="https://graphical.weather.gov/xml/DWMLgen/wsdl/ndfdXML.wsdl" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </output>
+    </operation>
+  </binding>
+  <service name="ndfdXML">
+    <port name="ndfdXMLPort" binding="tns:ndfdXMLBinding">
+      <soap:address location="https://graphical.weather.gov:443/xml/SOAP_server/ndfdXMLserver.php"/>
+    </port>
+  </service>
+</definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://localhost:8088/</con:endpoint><con:endpoint>https://graphical.weather.gov:443/xml/SOAP_server/ndfdXMLserver.php</con:endpoint></con:endpoints><con:operation id="41b7ea51-2745-4abe-81fd-01004bf45059" isOneWay="false" action="https://graphical.weather.gov/xml/DWMLgen/wsdl/ndfdXML.wsdl#CornerPoints" name="CornerPoints" bindingOperationName="CornerPoints" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="be2c3f2e-2596-49b1-81f5-7aa9836535ea" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://graphical.weather.gov:443/xml/SOAP_server/ndfdXMLserver.php</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ndf="https://graphical.weather.gov/xml/DWMLgen/wsdl/ndfdXML.wsdl">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ndf:CornerPoints soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">\r
+         <sector xsi:type="xsd:string">?</sector>\r
+      </ndf:CornerPoints>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:wsaConfig mustUnderstand="NONE" version="200508" action="https://graphical.weather.gov/xml/DWMLgen/wsdl/ndfdXML.wsdl#CornerPoints"/></con:call></con:operation><con:operation id="b07891d7-2839-442f-8812-2e15382f60a8" isOneWay="false" action="https://graphical.weather.gov/xml/DWMLgen/wsdl/ndfdXML.wsdl#GmlLatLonList" name="GmlLatLonList" bindingOperationName="GmlLatLonList" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="d55f5607-7e55-40b9-ab69-e1701aab6d8c" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://graphical.weather.gov:443/xml/SOAP_server/ndfdXMLserver.php</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ndf="https://graphical.weather.gov/xml/DWMLgen/wsdl/ndfdXML.wsdl">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ndf:GmlLatLonList soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">\r
+         <listLatLon xsi:type="xsd:string">?</listLatLon>\r
+         <requestedTime xsi:type="xsd:dateTime">?</requestedTime>\r
+         <featureType xsi:type="xsd:string">?</featureType>\r
+         <weatherParameters xsi:type="ndf:weatherParametersType">\r
+            <!--You may enter the following 53 items in any order-->\r
+            <maxt xsi:type="xsd:boolean">?</maxt>\r
+            <mint xsi:type="xsd:boolean">?</mint>\r
+            <temp xsi:type="xsd:boolean">?</temp>\r
+            <dew xsi:type="xsd:boolean">?</dew>\r
+            <pop12 xsi:type="xsd:boolean">?</pop12>\r
+            <qpf xsi:type="xsd:boolean">?</qpf>\r
+            <sky xsi:type="xsd:boolean">?</sky>\r
+            <snow xsi:type="xsd:boolean">?</snow>\r
+            <wspd xsi:type="xsd:boolean">?</wspd>\r
+            <wdir xsi:type="xsd:boolean">?</wdir>\r
+            <wx xsi:type="xsd:boolean">?</wx>\r
+            <waveh xsi:type="xsd:boolean">?</waveh>\r
+            <icons xsi:type="xsd:boolean">?</icons>\r
+            <rh xsi:type="xsd:boolean">?</rh>\r
+            <appt xsi:type="xsd:boolean">?</appt>\r
+            <incw34 xsi:type="xsd:boolean">?</incw34>\r
+            <incw50 xsi:type="xsd:boolean">?</incw50>\r
+            <incw64 xsi:type="xsd:boolean">?</incw64>\r
+            <cumw34 xsi:type="xsd:boolean">?</cumw34>\r
+            <cumw50 xsi:type="xsd:boolean">?</cumw50>\r
+            <cumw64 xsi:type="xsd:boolean">?</cumw64>\r
+            <critfireo xsi:type="xsd:boolean">?</critfireo>\r
+            <dryfireo xsi:type="xsd:boolean">?</dryfireo>\r
+            <conhazo xsi:type="xsd:boolean">?</conhazo>\r
+            <ptornado xsi:type="xsd:boolean">?</ptornado>\r
+            <phail xsi:type="xsd:boolean">?</phail>\r
+            <ptstmwinds xsi:type="xsd:boolean">?</ptstmwinds>\r
+            <pxtornado xsi:type="xsd:boolean">?</pxtornado>\r
+            <pxhail xsi:type="xsd:boolean">?</pxhail>\r
+            <pxtstmwinds xsi:type="xsd:boolean">?</pxtstmwinds>\r
+            <ptotsvrtstm xsi:type="xsd:boolean">?</ptotsvrtstm>\r
+            <pxtotsvrtstm xsi:type="xsd:boolean">?</pxtotsvrtstm>\r
+            <tmpabv14d xsi:type="xsd:boolean">?</tmpabv14d>\r
+            <tmpblw14d xsi:type="xsd:boolean">?</tmpblw14d>\r
+            <tmpabv30d xsi:type="xsd:boolean">?</tmpabv30d>\r
+            <tmpblw30d xsi:type="xsd:boolean">?</tmpblw30d>\r
+            <tmpabv90d xsi:type="xsd:boolean">?</tmpabv90d>\r
+            <tmpblw90d xsi:type="xsd:boolean">?</tmpblw90d>\r
+            <prcpabv14d xsi:type="xsd:boolean">?</prcpabv14d>\r
+            <prcpblw14d xsi:type="xsd:boolean">?</prcpblw14d>\r
+            <prcpabv30d xsi:type="xsd:boolean">?</prcpabv30d>\r
+            <prcpblw30d xsi:type="xsd:boolean">?</prcpblw30d>\r
+            <prcpabv90d xsi:type="xsd:boolean">?</prcpabv90d>\r
+            <prcpblw90d xsi:type="xsd:boolean">?</prcpblw90d>\r
+            <precipa_r xsi:type="xsd:boolean">?</precipa_r>\r
+            <sky_r xsi:type="xsd:boolean">?</sky_r>\r
+            <temp_r xsi:type="xsd:boolean">?</temp_r>\r
+            <td_r xsi:type="xsd:boolean">?</td_r>\r
+            <wdir_r xsi:type="xsd:boolean">?</wdir_r>\r
+            <wspd_r xsi:type="xsd:boolean">?</wspd_r>\r
+            <wwa xsi:type="xsd:boolean">?</wwa>\r
+            <wgust xsi:type="xsd:boolean">?</wgust>\r
+            <iceaccum xsi:type="xsd:boolean">?</iceaccum>\r
+         </weatherParameters>\r
+      </ndf:GmlLatLonList>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="https://graphical.weather.gov/xml/DWMLgen/wsdl/ndfdXML.wsdl#GmlLatLonList"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="ef547c0b-f644-430f-aa56-ed4fc33d8e2d" isOneWay="false" action="https://graphical.weather.gov/xml/DWMLgen/wsdl/ndfdXML.wsdl#GmlTimeSeries" name="GmlTimeSeries" bindingOperationName="GmlTimeSeries" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="4c926016-775b-4b1d-ac44-6faf860c4ec4" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://graphical.weather.gov:443/xml/SOAP_server/ndfdXMLserver.php</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ndf="https://graphical.weather.gov/xml/DWMLgen/wsdl/ndfdXML.wsdl">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ndf:GmlTimeSeries soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">\r
+         <listLatLon xsi:type="xsd:string">?</listLatLon>\r
+         <startTime xsi:type="xsd:dateTime">?</startTime>\r
+         <endTime xsi:type="xsd:dateTime">?</endTime>\r
+         <compType xsi:type="xsd:string">?</compType>\r
+         <featureType xsi:type="xsd:string">?</featureType>\r
+         <propertyName xsi:type="xsd:string">?</propertyName>\r
+      </ndf:GmlTimeSeries>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:wsaConfig mustUnderstand="NONE" version="200508" action="https://graphical.weather.gov/xml/DWMLgen/wsdl/ndfdXML.wsdl#GmlTimeSeries"/></con:call></con:operation><con:operation id="a91b51bc-f351-4430-9667-a542d3011322" isOneWay="false" action="https://graphical.weather.gov/xml/DWMLgen/wsdl/ndfdXML.wsdl#LatLonListCityNames" name="LatLonListCityNames" bindingOperationName="LatLonListCityNames" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="764d353d-61fe-4e17-9c49-980688ad4bf4" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://graphical.weather.gov:443/xml/SOAP_server/ndfdXMLserver.php</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ndf="https://graphical.weather.gov/xml/DWMLgen/wsdl/ndfdXML.wsdl">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ndf:LatLonListCityNames soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">\r
+         <displayLevel xsi:type="xsd:integer">?</displayLevel>\r
+      </ndf:LatLonListCityNames>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:wsaConfig mustUnderstand="NONE" version="200508" action="https://graphical.weather.gov/xml/DWMLgen/wsdl/ndfdXML.wsdl#LatLonListCityNames"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="0d949461-2549-43e6-a444-ccdc5c09da24" isOneWay="false" action="https://graphical.weather.gov/xml/DWMLgen/wsdl/ndfdXML.wsdl#LatLonListLine" name="LatLonListLine" bindingOperationName="LatLonListLine" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="c3d023ff-dc3d-4e26-b68c-79cf0e9649ca" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://graphical.weather.gov:443/xml/SOAP_server/ndfdXMLserver.php</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ndf="https://graphical.weather.gov/xml/DWMLgen/wsdl/ndfdXML.wsdl">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ndf:LatLonListLine soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">\r
+         <endPoint1Lat xsi:type="xsd:decimal">?</endPoint1Lat>\r
+         <endPoint1Lon xsi:type="xsd:decimal">?</endPoint1Lon>\r
+         <endPoint2Lat xsi:type="xsd:decimal">?</endPoint2Lat>\r
+         <endPoint2Lon xsi:type="xsd:decimal">?</endPoint2Lon>\r
+      </ndf:LatLonListLine>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:wsaConfig mustUnderstand="NONE" version="200508" action="https://graphical.weather.gov/xml/DWMLgen/wsdl/ndfdXML.wsdl#LatLonListLine"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="1c953227-1e26-4563-8974-62926207bff1" isOneWay="false" action="https://graphical.weather.gov/xml/DWMLgen/wsdl/ndfdXML.wsdl#LatLonListSquare" name="LatLonListSquare" bindingOperationName="LatLonListSquare" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="e48f35e0-7223-4ef1-98f2-3a8ad81e8f10" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://graphical.weather.gov:443/xml/SOAP_server/ndfdXMLserver.php</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ndf="https://graphical.weather.gov/xml/DWMLgen/wsdl/ndfdXML.wsdl">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ndf:LatLonListSquare soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">\r
+         <centerPointLat xsi:type="xsd:decimal">?</centerPointLat>\r
+         <centerPointLon xsi:type="xsd:decimal">?</centerPointLon>\r
+         <distanceLat xsi:type="xsd:decimal">?</distanceLat>\r
+         <distanceLon xsi:type="xsd:decimal">?</distanceLon>\r
+         <resolution xsi:type="xsd:decimal">?</resolution>\r
+      </ndf:LatLonListSquare>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:wsaConfig mustUnderstand="NONE" version="200508" action="https://graphical.weather.gov/xml/DWMLgen/wsdl/ndfdXML.wsdl#LatLonListSquare"/></con:call></con:operation><con:operation id="32cb7a62-d65b-4d20-b2d8-70da670a9eda" isOneWay="false" action="https://graphical.weather.gov/xml/DWMLgen/wsdl/ndfdXML.wsdl#LatLonListSubgrid" name="LatLonListSubgrid" bindingOperationName="LatLonListSubgrid" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="91d91791-6799-4ac6-8992-5d77d1e7d6e3" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://graphical.weather.gov:443/xml/SOAP_server/ndfdXMLserver.php</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ndf="https://graphical.weather.gov/xml/DWMLgen/wsdl/ndfdXML.wsdl">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ndf:LatLonListSubgrid soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">\r
+         <lowerLeftLatitude xsi:type="xsd:decimal">?</lowerLeftLatitude>\r
+         <lowerLeftLongitude xsi:type="xsd:decimal">?</lowerLeftLongitude>\r
+         <upperRightLatitude xsi:type="xsd:decimal">?</upperRightLatitude>\r
+         <upperRightLongitude xsi:type="xsd:decimal">?</upperRightLongitude>\r
+         <resolution xsi:type="xsd:decimal">?</resolution>\r
+      </ndf:LatLonListSubgrid>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:wsaConfig mustUnderstand="NONE" version="200508" action="https://graphical.weather.gov/xml/DWMLgen/wsdl/ndfdXML.wsdl#LatLonListSubgrid"/></con:call></con:operation><con:operation id="c9cf8e2b-266c-4c9e-9c22-75d591410c9a" isOneWay="false" action="https://graphical.weather.gov/xml/DWMLgen/wsdl/ndfdXML.wsdl#LatLonListZipCode" name="LatLonListZipCode" bindingOperationName="LatLonListZipCode" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="40968f13-8e15-47e5-9670-cba1c71eaa06" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://graphical.weather.gov:443/xml/SOAP_server/ndfdXMLserver.php</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ndf="https://graphical.weather.gov/xml/DWMLgen/wsdl/ndfdXML.wsdl">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ndf:LatLonListZipCode soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">\r
+         <zipCodeList xsi:type="xsd:string">35816</zipCodeList>\r
+      </ndf:LatLonListZipCode>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="https://graphical.weather.gov/xml/DWMLgen/wsdl/ndfdXML.wsdl#LatLonListZipCode"/><con:wsrmConfig version="1.2"/></con:call><con:call id="ff03ff16-92ca-49e3-bbca-12412a5140b0" name="Request 2"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://graphical.weather.gov:443/xml/SOAP_server/ndfdXMLserver.php</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ndf="https://graphical.weather.gov/xml/DWMLgen/wsdl/ndfdXML.wsdl">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ndf:LatLonListZipCode soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">\r
+         <zipCodeList xsi:type="xsd:string">99524</zipCodeList>\r
+      </ndf:LatLonListZipCode>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="https://graphical.weather.gov/xml/DWMLgen/wsdl/ndfdXML.wsdl#LatLonListZipCode"/><con:wsrmConfig version="1.2"/></con:call><con:call id="36a9b403-1bb4-4178-9ebd-7c9bfe330d55" name="Request 3"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://graphical.weather.gov:443/xml/SOAP_server/ndfdXMLserver.php</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ndf="https://graphical.weather.gov/xml/DWMLgen/wsdl/ndfdXML.wsdl">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ndf:LatLonListZipCode soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">\r
+         <zipCodeList xsi:type="xsd:string">72217</zipCodeList>\r
+      </ndf:LatLonListZipCode>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="https://graphical.weather.gov/xml/DWMLgen/wsdl/ndfdXML.wsdl#LatLonListZipCode"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="60a8dc0f-345e-43ff-a684-744a1fe03c33" isOneWay="false" action="https://graphical.weather.gov/xml/DWMLgen/wsdl/ndfdXML.wsdl#NDFDgen" name="NDFDgen" bindingOperationName="NDFDgen" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="998f99f9-ed97-4ad4-a245-b14faf72db59" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://graphical.weather.gov:443/xml/SOAP_server/ndfdXMLserver.php</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ndf="https://graphical.weather.gov/xml/DWMLgen/wsdl/ndfdXML.wsdl">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ndf:NDFDgen soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">\r
+         <latitude xsi:type="xsd:decimal">?</latitude>\r
+         <longitude xsi:type="xsd:decimal">?</longitude>\r
+         <product xsi:type="xsd:string">?</product>\r
+         <startTime xsi:type="xsd:dateTime">?</startTime>\r
+         <endTime xsi:type="xsd:dateTime">?</endTime>\r
+         <Unit xsi:type="xsd:string">?</Unit>\r
+         <weatherParameters xsi:type="ndf:weatherParametersType">\r
+            <!--You may enter the following 53 items in any order-->\r
+            <maxt xsi:type="xsd:boolean">?</maxt>\r
+            <mint xsi:type="xsd:boolean">?</mint>\r
+            <temp xsi:type="xsd:boolean">?</temp>\r
+            <dew xsi:type="xsd:boolean">?</dew>\r
+            <pop12 xsi:type="xsd:boolean">?</pop12>\r
+            <qpf xsi:type="xsd:boolean">?</qpf>\r
+            <sky xsi:type="xsd:boolean">?</sky>\r
+            <snow xsi:type="xsd:boolean">?</snow>\r
+            <wspd xsi:type="xsd:boolean">?</wspd>\r
+            <wdir xsi:type="xsd:boolean">?</wdir>\r
+            <wx xsi:type="xsd:boolean">?</wx>\r
+            <waveh xsi:type="xsd:boolean">?</waveh>\r
+            <icons xsi:type="xsd:boolean">?</icons>\r
+            <rh xsi:type="xsd:boolean">?</rh>\r
+            <appt xsi:type="xsd:boolean">?</appt>\r
+            <incw34 xsi:type="xsd:boolean">?</incw34>\r
+            <incw50 xsi:type="xsd:boolean">?</incw50>\r
+            <incw64 xsi:type="xsd:boolean">?</incw64>\r
+            <cumw34 xsi:type="xsd:boolean">?</cumw34>\r
+            <cumw50 xsi:type="xsd:boolean">?</cumw50>\r
+            <cumw64 xsi:type="xsd:boolean">?</cumw64>\r
+            <critfireo xsi:type="xsd:boolean">?</critfireo>\r
+            <dryfireo xsi:type="xsd:boolean">?</dryfireo>\r
+            <conhazo xsi:type="xsd:boolean">?</conhazo>\r
+            <ptornado xsi:type="xsd:boolean">?</ptornado>\r
+            <phail xsi:type="xsd:boolean">?</phail>\r
+            <ptstmwinds xsi:type="xsd:boolean">?</ptstmwinds>\r
+            <pxtornado xsi:type="xsd:boolean">?</pxtornado>\r
+            <pxhail xsi:type="xsd:boolean">?</pxhail>\r
+            <pxtstmwinds xsi:type="xsd:boolean">?</pxtstmwinds>\r
+            <ptotsvrtstm xsi:type="xsd:boolean">?</ptotsvrtstm>\r
+            <pxtotsvrtstm xsi:type="xsd:boolean">?</pxtotsvrtstm>\r
+            <tmpabv14d xsi:type="xsd:boolean">?</tmpabv14d>\r
+            <tmpblw14d xsi:type="xsd:boolean">?</tmpblw14d>\r
+            <tmpabv30d xsi:type="xsd:boolean">?</tmpabv30d>\r
+            <tmpblw30d xsi:type="xsd:boolean">?</tmpblw30d>\r
+            <tmpabv90d xsi:type="xsd:boolean">?</tmpabv90d>\r
+            <tmpblw90d xsi:type="xsd:boolean">?</tmpblw90d>\r
+            <prcpabv14d xsi:type="xsd:boolean">?</prcpabv14d>\r
+            <prcpblw14d xsi:type="xsd:boolean">?</prcpblw14d>\r
+            <prcpabv30d xsi:type="xsd:boolean">?</prcpabv30d>\r
+            <prcpblw30d xsi:type="xsd:boolean">?</prcpblw30d>\r
+            <prcpabv90d xsi:type="xsd:boolean">?</prcpabv90d>\r
+            <prcpblw90d xsi:type="xsd:boolean">?</prcpblw90d>\r
+            <precipa_r xsi:type="xsd:boolean">?</precipa_r>\r
+            <sky_r xsi:type="xsd:boolean">?</sky_r>\r
+            <temp_r xsi:type="xsd:boolean">?</temp_r>\r
+            <td_r xsi:type="xsd:boolean">?</td_r>\r
+            <wdir_r xsi:type="xsd:boolean">?</wdir_r>\r
+            <wspd_r xsi:type="xsd:boolean">?</wspd_r>\r
+            <wwa xsi:type="xsd:boolean">?</wwa>\r
+            <wgust xsi:type="xsd:boolean">?</wgust>\r
+            <iceaccum xsi:type="xsd:boolean">?</iceaccum>\r
+         </weatherParameters>\r
+      </ndf:NDFDgen>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:wsaConfig mustUnderstand="NONE" version="200508" action="https://graphical.weather.gov/xml/DWMLgen/wsdl/ndfdXML.wsdl#NDFDgen"/></con:call></con:operation><con:operation id="5a241a23-101a-47ee-b558-950d5a46b437" isOneWay="false" action="https://graphical.weather.gov/xml/DWMLgen/wsdl/ndfdXML.wsdl#NDFDgenByDay" name="NDFDgenByDay" bindingOperationName="NDFDgenByDay" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="6e5f2dbc-836b-4048-ab4b-0628f8d279b4" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://graphical.weather.gov:443/xml/SOAP_server/ndfdXMLserver.php</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ndf="https://graphical.weather.gov/xml/DWMLgen/wsdl/ndfdXML.wsdl">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ndf:NDFDgenByDay soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">\r
+         <latitude xsi:type="xsd:decimal">?</latitude>\r
+         <longitude xsi:type="xsd:decimal">?</longitude>\r
+         <startDate xsi:type="xsd:date">?</startDate>\r
+         <numDays xsi:type="xsd:integer">?</numDays>\r
+         <Unit xsi:type="xsd:string">?</Unit>\r
+         <format xsi:type="xsd:string">?</format>\r
+      </ndf:NDFDgenByDay>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:wsaConfig mustUnderstand="NONE" version="200508" action="https://graphical.weather.gov/xml/DWMLgen/wsdl/ndfdXML.wsdl#NDFDgenByDay"/></con:call></con:operation><con:operation id="841fc689-aa0a-4920-9946-1a428bbf8c9a" isOneWay="false" action="https://graphical.weather.gov/xml/DWMLgen/wsdl/ndfdXML.wsdl#NDFDgenByDayLatLonList" name="NDFDgenByDayLatLonList" bindingOperationName="NDFDgenByDayLatLonList" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="d29b3838-356a-467c-98b2-b5f5056b4d2d" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://graphical.weather.gov:443/xml/SOAP_server/ndfdXMLserver.php</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ndf="https://graphical.weather.gov/xml/DWMLgen/wsdl/ndfdXML.wsdl">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ndf:NDFDgenByDayLatLonList soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">\r
+         <listLatLon xsi:type="xsd:string">?</listLatLon>\r
+         <startDate xsi:type="xsd:date">?</startDate>\r
+         <numDays xsi:type="xsd:integer">?</numDays>\r
+         <Unit xsi:type="xsd:string">?</Unit>\r
+         <format xsi:type="xsd:string">?</format>\r
+      </ndf:NDFDgenByDayLatLonList>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:wsaConfig mustUnderstand="NONE" version="200508" action="https://graphical.weather.gov/xml/DWMLgen/wsdl/ndfdXML.wsdl#NDFDgenByDayLatLonList"/></con:call></con:operation><con:operation id="a637530a-fcaa-49d4-a537-f88bd0898586" isOneWay="false" action="https://graphical.weather.gov/xml/DWMLgen/wsdl/ndfdXML.wsdl#NDFDgenLatLonList" name="NDFDgenLatLonList" bindingOperationName="NDFDgenLatLonList" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="1da9bd95-dff5-46c4-9274-dcffc8bb402c" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://graphical.weather.gov:443/xml/SOAP_server/ndfdXMLserver.php</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ndf="https://graphical.weather.gov/xml/DWMLgen/wsdl/ndfdXML.wsdl">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ndf:NDFDgenLatLonList soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">\r
+         <listLatLon xsi:type="xsd:string">?</listLatLon>\r
+         <product xsi:type="xsd:string">?</product>\r
+         <startTime xsi:type="xsd:dateTime">?</startTime>\r
+         <endTime xsi:type="xsd:dateTime">?</endTime>\r
+         <Unit xsi:type="xsd:string">?</Unit>\r
+         <weatherParameters xsi:type="ndf:weatherParametersType">\r
+            <!--You may enter the following 53 items in any order-->\r
+            <maxt xsi:type="xsd:boolean">?</maxt>\r
+            <mint xsi:type="xsd:boolean">?</mint>\r
+            <temp xsi:type="xsd:boolean">?</temp>\r
+            <dew xsi:type="xsd:boolean">?</dew>\r
+            <pop12 xsi:type="xsd:boolean">?</pop12>\r
+            <qpf xsi:type="xsd:boolean">?</qpf>\r
+            <sky xsi:type="xsd:boolean">?</sky>\r
+            <snow xsi:type="xsd:boolean">?</snow>\r
+            <wspd xsi:type="xsd:boolean">?</wspd>\r
+            <wdir xsi:type="xsd:boolean">?</wdir>\r
+            <wx xsi:type="xsd:boolean">?</wx>\r
+            <waveh xsi:type="xsd:boolean">?</waveh>\r
+            <icons xsi:type="xsd:boolean">?</icons>\r
+            <rh xsi:type="xsd:boolean">?</rh>\r
+            <appt xsi:type="xsd:boolean">?</appt>\r
+            <incw34 xsi:type="xsd:boolean">?</incw34>\r
+            <incw50 xsi:type="xsd:boolean">?</incw50>\r
+            <incw64 xsi:type="xsd:boolean">?</incw64>\r
+            <cumw34 xsi:type="xsd:boolean">?</cumw34>\r
+            <cumw50 xsi:type="xsd:boolean">?</cumw50>\r
+            <cumw64 xsi:type="xsd:boolean">?</cumw64>\r
+            <critfireo xsi:type="xsd:boolean">?</critfireo>\r
+            <dryfireo xsi:type="xsd:boolean">?</dryfireo>\r
+            <conhazo xsi:type="xsd:boolean">?</conhazo>\r
+            <ptornado xsi:type="xsd:boolean">?</ptornado>\r
+            <phail xsi:type="xsd:boolean">?</phail>\r
+            <ptstmwinds xsi:type="xsd:boolean">?</ptstmwinds>\r
+            <pxtornado xsi:type="xsd:boolean">?</pxtornado>\r
+            <pxhail xsi:type="xsd:boolean">?</pxhail>\r
+            <pxtstmwinds xsi:type="xsd:boolean">?</pxtstmwinds>\r
+            <ptotsvrtstm xsi:type="xsd:boolean">?</ptotsvrtstm>\r
+            <pxtotsvrtstm xsi:type="xsd:boolean">?</pxtotsvrtstm>\r
+            <tmpabv14d xsi:type="xsd:boolean">?</tmpabv14d>\r
+            <tmpblw14d xsi:type="xsd:boolean">?</tmpblw14d>\r
+            <tmpabv30d xsi:type="xsd:boolean">?</tmpabv30d>\r
+            <tmpblw30d xsi:type="xsd:boolean">?</tmpblw30d>\r
+            <tmpabv90d xsi:type="xsd:boolean">?</tmpabv90d>\r
+            <tmpblw90d xsi:type="xsd:boolean">?</tmpblw90d>\r
+            <prcpabv14d xsi:type="xsd:boolean">?</prcpabv14d>\r
+            <prcpblw14d xsi:type="xsd:boolean">?</prcpblw14d>\r
+            <prcpabv30d xsi:type="xsd:boolean">?</prcpabv30d>\r
+            <prcpblw30d xsi:type="xsd:boolean">?</prcpblw30d>\r
+            <prcpabv90d xsi:type="xsd:boolean">?</prcpabv90d>\r
+            <prcpblw90d xsi:type="xsd:boolean">?</prcpblw90d>\r
+            <precipa_r xsi:type="xsd:boolean">?</precipa_r>\r
+            <sky_r xsi:type="xsd:boolean">?</sky_r>\r
+            <temp_r xsi:type="xsd:boolean">?</temp_r>\r
+            <td_r xsi:type="xsd:boolean">?</td_r>\r
+            <wdir_r xsi:type="xsd:boolean">?</wdir_r>\r
+            <wspd_r xsi:type="xsd:boolean">?</wspd_r>\r
+            <wwa xsi:type="xsd:boolean">?</wwa>\r
+            <wgust xsi:type="xsd:boolean">?</wgust>\r
+            <iceaccum xsi:type="xsd:boolean">?</iceaccum>\r
+         </weatherParameters>\r
+      </ndf:NDFDgenLatLonList>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:wsaConfig mustUnderstand="NONE" version="200508" action="https://graphical.weather.gov/xml/DWMLgen/wsdl/ndfdXML.wsdl#NDFDgenLatLonList"/></con:call></con:operation></con:interface><con:testSuite id="f06fc1fd-f654-4282-96a3-5f0d28a6c5f1" name="TestSuite_1"><con:settings/><con:savedRecentRuns>1</con:savedRecentRuns><con:runType>PARALLELL</con:runType><con:testCase id="741c1d51-9ce6-4f5d-a1e7-792e6d145cd3" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="LatLonListZipCode_Test_Suite" searchProperties="true"><con:description>Cas de Test pour LatLonListZipCode Narvalho !</con:description><con:settings/><con:savedRecentRuns>1</con:savedRecentRuns><con:testStep type="VirtRunnerTestStep" name="Virtual Service Runner" id="6d7ea8d0-7674-4c8f-b9fc-d6fce4280aed" disabled="true"><con:settings/><con:config><url>localhost</url><server>ndfdXMLBinding Virtual Service</server><action>run</action></con:config></con:testStep><con:testStep type="request" id="0f3f09c7-aedc-4a7f-a2fd-a5ecdb521a3e" name="LatLonListZipCode - Request 1"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>ndfdXMLBinding</con:interface><con:operation>LatLonListZipCode</con:operation><con:request name="LatLonListZipCode - Request 1" outgoingWss="" incomingWss="" timeout="" sslKeystore="" useWsAddressing="false" useWsReliableMessaging="false" wssPasswordType="" id="efe4af8d-9627-4f3e-bb8d-416c9cfcb607"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8088/</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ndf="https://graphical.weather.gov/xml/DWMLgen/wsdl/ndfdXML.wsdl">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ndf:LatLonListZipCode soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+         <zipCodeList xsi:type="xsd:string">${#TestCase#zipCode}</zipCodeList>
+      </ndf:LatLonListZipCode>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="58981cc5-08ed-4b19-9860-90aef7e3baf7" name="SOAP Response"/><con:assertion type="Simple Contains" id="cd4a07aa-4ded-4546-9674-8666231ddc80" name="Contains" disabled="true"><con:configuration><token/><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:assertion type="GroovyScriptAssertion" id="090a0d1f-17e2-4d95-a553-30bc3f731792" name="Script Assertion"><con:configuration/></con:assertion><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="https://graphical.weather.gov/xml/DWMLgen/wsdl/ndfdXML.wsdl#LatLonListZipCode"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="VirtRunnerTestStep" name="Copy of Virtual Service Runner" id="67b9575f-1a49-4bcc-a380-2e9ef7e8fcb0" disabled="true"><con:settings/><con:config><url>localhost</url><server>ndfdXMLBinding Virtual Service</server><action>stop</action></con:config></con:testStep><con:testStep type="request" id="b23dd4a8-64d2-429b-a164-1ca643a719d1" name="LatLonListZipCode - Request 2"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>ndfdXMLBinding</con:interface><con:operation>LatLonListZipCode</con:operation><con:request name="LatLonListZipCode - Request 2" outgoingWss="" incomingWss="" timeout="" sslKeystore="" useWsAddressing="false" useWsReliableMessaging="false" wssPasswordType="" id="91143904-6f8d-40e6-864d-63f810a225c2"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://graphical.weather.gov:443/xml/SOAP_server/ndfdXMLserver.php</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ndf="https://graphical.weather.gov/xml/DWMLgen/wsdl/ndfdXML.wsdl">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ndf:LatLonListZipCode soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+         <zipCodeList xsi:type="xsd:string">${#TestCase#zipCode2}</zipCodeList>
+      </ndf:LatLonListZipCode>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="7cab14e4-9ec1-4f5d-82af-372a30513bbc" name="SOAP Response"/><con:assertion type="Simple Contains" id="8abaa3a1-4e0e-4701-b545-50251846dbf1" name="Contains"><con:configuration><token>45.6032,-108.684</token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="https://graphical.weather.gov/xml/DWMLgen/wsdl/ndfdXML.wsdl#LatLonListZipCode"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties><con:property><con:name>zipCode</con:name><con:value>10001</con:value></con:property><con:property><con:name>zipCode2</con:name><con:value>59044</con:value></con:property><con:property><con:name>zipCodeError</con:name><con:value>75</con:value></con:property></con:properties><con:reportParameters/><con:breakPoints><con:testStepId>6d7ea8d0-7674-4c8f-b9fc-d6fce4280aed</con:testStepId><con:status>NONE</con:status><con:properties/></con:breakPoints><con:breakPoints><con:testStepId>67b9575f-1a49-4bcc-a380-2e9ef7e8fcb0</con:testStepId><con:status>NONE</con:status><con:properties/></con:breakPoints></con:testCase><con:properties/><con:reportParameters/></con:testSuite><con:testSuite id="1724cb6a-9bfc-41ca-98d4-915e1a82d33c" name="TestSuite 2"><con:settings/><con:savedRecentRuns>1</con:savedRecentRuns><con:runType>SEQUENTIAL</con:runType><con:properties/><con:reportParameters/></con:testSuite><con:testSuite id="6159807d-c928-4d21-b395-82a386f23822" name="TestSuite 3"><con:settings/><con:savedRecentRuns>1</con:savedRecentRuns><con:runType>SEQUENTIAL</con:runType><con:properties/><con:reportParameters/></con:testSuite><con:testSuite id="d93461a8-8856-4fa5-ab2e-ed8da8152ae5" name="TestSuite 4"><con:settings/><con:savedRecentRuns>1</con:savedRecentRuns><con:runType>SEQUENTIAL</con:runType><con:properties/><con:reportParameters/></con:testSuite><con:testSuite id="dcc707c9-6822-4b59-8e5f-288d072eabb8" name="Global_TestSuite"><con:settings/><con:savedRecentRuns>1</con:savedRecentRuns><con:runType>SEQUENTIAL</con:runType><con:testCase id="db46ca56-9b16-4fcb-a2d3-26b65ae40d14" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="LatLonListCityNames_TestCase" searchProperties="true" timeout="0"><con:settings/><con:savedRecentRuns>1</con:savedRecentRuns><con:testStep type="request" id="f30a4757-1234-42e2-a0b0-1f802df648eb" name="LatLonListCityNames - Request 1"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>ndfdXMLBinding</con:interface><con:operation>LatLonListCityNames</con:operation><con:request name="LatLonListCityNames - Request 1" outgoingWss="" incomingWss="" timeout="" sslKeystore="" useWsAddressing="false" useWsReliableMessaging="false" wssPasswordType="" id="44488672-39f0-4a64-a109-4e9c9d2728c9"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://graphical.weather.gov:443/xml/SOAP_server/ndfdXMLserver.php</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ndf="https://graphical.weather.gov/xml/DWMLgen/wsdl/ndfdXML.wsdl">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ndf:LatLonListCityNames soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+         <displayLevel xsi:type="xsd:integer">?</displayLevel>
+      </ndf:LatLonListCityNames>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="7656d2bb-07ec-4da4-aa28-863a0da26b9e" name="SOAP Response"/><con:assertion type="Simple Contains" id="04797049-553f-4133-ab14-c1b4cfe2ffae" name="Contains"><con:configuration><token/><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:wsaConfig mustUnderstand="NONE" version="200508" action="https://graphical.weather.gov/xml/DWMLgen/wsdl/ndfdXML.wsdl#LatLonListCityNames"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="request" id="19f69081-3aeb-47ae-8739-d05ab8c88917" name="LatLonListCityNames - Request 2"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>ndfdXMLBinding</con:interface><con:operation>LatLonListCityNames</con:operation><con:request name="LatLonListCityNames - Request 2" outgoingWss="" incomingWss="" timeout="" sslKeystore="" useWsAddressing="false" useWsReliableMessaging="false" wssPasswordType="" id="44488672-39f0-4a64-a109-4e9c9d2728c9"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://graphical.weather.gov:443/xml/SOAP_server/ndfdXMLserver.php</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ndf="https://graphical.weather.gov/xml/DWMLgen/wsdl/ndfdXML.wsdl">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ndf:LatLonListCityNames soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+         <displayLevel xsi:type="xsd:integer">${#TestCase#CityArea}</displayLevel>
+      </ndf:LatLonListCityNames>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="7656d2bb-07ec-4da4-aa28-863a0da26b9e" name="SOAP Response"/><con:assertion type="Simple Contains" id="04797049-553f-4133-ab14-c1b4cfe2ffae" name="Contains"><con:configuration><token/><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:wsaConfig mustUnderstand="NONE" version="200508" action="https://graphical.weather.gov/xml/DWMLgen/wsdl/ndfdXML.wsdl#LatLonListCityNames"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties><con:property><con:name>CityArea</con:name><con:value>2</con:value></con:property></con:properties><con:reportParameters/></con:testCase><con:testCase id="d460a398-6a55-43f6-9a0f-27102abb3c22" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="LatLonListLine_TestCase" searchProperties="true" timeout="0"><con:settings/><con:savedRecentRuns>1</con:savedRecentRuns><con:testStep type="datasource" name="DataSourceEndL" id="57a722d1-01fe-48d7-8dc2-94b12f1d1aea"><con:settings/><con:config xsi:type="con:DataSourceStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:dataSource type="Grid"><con:configuration><check><![CDATA[<xml-fragment><con:entry xmlns:con="http://eviware.com/soapui/config">true</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">true</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">true</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">true</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">true</con:entry></xml-fragment>]]></check><row><![CDATA[<xml-fragment><con:entry xmlns:con="http://eviware.com/soapui/config">Sample value 1-1</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">Sample value 1-2</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">Sample value 1-3</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config"/><con:entry xmlns:con="http://eviware.com/soapui/config"/></xml-fragment>]]></row><row><![CDATA[<xml-fragment><con:entry xmlns:con="http://eviware.com/soapui/config">Sample value 2-1</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">Sample value 2-2</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">Sample value 2-3</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config"/><con:entry xmlns:con="http://eviware.com/soapui/config"/></xml-fragment>]]></row><row><![CDATA[<xml-fragment><con:entry xmlns:con="http://eviware.com/soapui/config">Sample value 3-1</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">Sample value 3-2</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">Sample value 3-3</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config"/><con:entry xmlns:con="http://eviware.com/soapui/config"/></xml-fragment>]]></row><row><![CDATA[<xml-fragment><con:entry xmlns:con="http://eviware.com/soapui/config">Sample value 4-1</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">Sample value 4-2</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">Sample value 4-3</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config"/><con:entry xmlns:con="http://eviware.com/soapui/config"/></xml-fragment>]]></row><row><![CDATA[<xml-fragment><con:entry xmlns:con="http://eviware.com/soapui/config">Sample value 5-1</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">Sample value 5-2</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">Sample value 5-3</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config"/><con:entry xmlns:con="http://eviware.com/soapui/config"/></xml-fragment>]]></row><recognizeAsPlainText>true</recognizeAsPlainText></con:configuration></con:dataSource><con:shared>true</con:shared><con:restartShared>true</con:restartShared><con:property>endPoint1Lat</con:property><con:property>endPoint1Lon</con:property><con:property>endPoint2Lat</con:property><con:property>endPoint2Lon</con:property><con:completeLastOperation>true</con:completeLastOperation><con:restartOnRun>true</con:restartOnRun></con:config></con:testStep><con:testStep type="request" id="2d0659df-921a-4d17-b351-6d9ed175e98d" name="LatLonListLine - Request 1"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>ndfdXMLBinding</con:interface><con:operation>LatLonListLine</con:operation><con:request name="LatLonListLine - Request 1" outgoingWss="" incomingWss="" timeout="" sslKeystore="" useWsAddressing="false" useWsReliableMessaging="false" wssPasswordType="" id="0211c7e6-22cc-4758-b403-015ec94208f7"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://graphical.weather.gov:443/xml/SOAP_server/ndfdXMLserver.php</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ndf="https://graphical.weather.gov/xml/DWMLgen/wsdl/ndfdXML.wsdl">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ndf:LatLonListLine soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+         <endPoint1Lat xsi:type="xsd:decimal">${DataSourceEndL#endPoint1Lat}</endPoint1Lat>
+         <endPoint1Lon xsi:type="xsd:decimal">${DataSourceEndL#endPoint1Lon}</endPoint1Lon>
+         <endPoint2Lat xsi:type="xsd:decimal">${DataSourceEndL#endPoint2Lat}</endPoint2Lat>
+         <endPoint2Lon xsi:type="xsd:decimal">${DataSourceEndL#endPoint2Lon}</endPoint2Lon>
+      </ndf:LatLonListLine>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="64e4ea53-e382-4cdc-a5e0-adeb59a9c971" name="SOAP Response"/><con:assertion type="Simple Contains" id="8e243db2-3a2a-42a4-88b2-84ee27434e23" name="Contains"><con:configuration><token/><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:wsaConfig mustUnderstand="NONE" version="200508" action="https://graphical.weather.gov/xml/DWMLgen/wsdl/ndfdXML.wsdl#LatLonListLine"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="datasourceloop" name="DataSource Loop" id="f12a2d25-bc61-4d3d-99f8-e2426adbd971"><con:settings/><con:config><dataSourceStep>DataSourceEndL</dataSourceStep><targetStep>LatLonListLine - Request 1</targetStep><discardResults>true</discardResults></con:config></con:testStep><con:testStep type="request" id="9f96675d-7749-481d-bde4-358e73f41dbb" name="LatLonListLine - Request 2"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>ndfdXMLBinding</con:interface><con:operation>LatLonListLine</con:operation><con:request name="LatLonListLine - Request 2" outgoingWss="" incomingWss="" timeout="" sslKeystore="" useWsAddressing="false" useWsReliableMessaging="false" wssPasswordType="" id="0211c7e6-22cc-4758-b403-015ec94208f7"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://graphical.weather.gov:443/xml/SOAP_server/ndfdXMLserver.php</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ndf="https://graphical.weather.gov/xml/DWMLgen/wsdl/ndfdXML.wsdl">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ndf:LatLonListLine soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+         <endPoint1Lat xsi:type="xsd:decimal">${#TestCase#EndLat1}</endPoint1Lat>
+         <endPoint1Lon xsi:type="xsd:decimal">${#TestCase#EndLon1}</endPoint1Lon>
+         <endPoint2Lat xsi:type="xsd:decimal">${#TestCase#EndLat2}</endPoint2Lat>
+         <endPoint2Lon xsi:type="xsd:decimal">${#TestCase#EndLon2}</endPoint2Lon>
+      </ndf:LatLonListLine>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="64e4ea53-e382-4cdc-a5e0-adeb59a9c971" name="SOAP Response"/><con:assertion type="Simple Contains" id="8e243db2-3a2a-42a4-88b2-84ee27434e23" name="Contains"><con:configuration><token>42.398178,110.000000 42.398178,110.095701 42.398178,110.191402 42.468811,110.287102 42.468811,110.382803 42.468811,110.478504 42.468811,110.574205 42.468811,110.669906 42.539364,110.765606 42.539364,110.861307 42.539364,110.957008</token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:wsaConfig mustUnderstand="NONE" version="200508" action="https://graphical.weather.gov/xml/DWMLgen/wsdl/ndfdXML.wsdl#LatLonListLine"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties><con:property><con:name>EndLat1</con:name><con:value>42.40</con:value></con:property><con:property><con:name>EndLon1</con:name><con:value>110.0</con:value></con:property><con:property><con:name>EndLat2</con:name><con:value>42.55</con:value></con:property><con:property><con:name>EndLon2</con:name><con:value>111.0</con:value></con:property></con:properties><con:reportParameters/></con:testCase><con:testCase id="50cc24f7-5586-4268-9010-8dece9262439" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="LatLonListSquare_TestCase" searchProperties="true" timeout="0"><con:settings/><con:savedRecentRuns>1</con:savedRecentRuns><con:testStep type="request" id="05a04894-2d59-4d67-8fbd-c379548f28e9" name="LatLonListSquare - Request 1"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>ndfdXMLBinding</con:interface><con:operation>LatLonListSquare</con:operation><con:request name="LatLonListSquare - Request 1" outgoingWss="" incomingWss="" timeout="" sslKeystore="" useWsAddressing="false" useWsReliableMessaging="false" wssPasswordType="" id="224af12c-6960-46cb-a310-e935c8f64e47"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://graphical.weather.gov:443/xml/SOAP_server/ndfdXMLserver.php</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ndf="https://graphical.weather.gov/xml/DWMLgen/wsdl/ndfdXML.wsdl">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ndf:LatLonListSquare soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+         <centerPointLat xsi:type="xsd:decimal">?</centerPointLat>
+         <centerPointLon xsi:type="xsd:decimal">?</centerPointLon>
+         <distanceLat xsi:type="xsd:decimal">?</distanceLat>
+         <distanceLon xsi:type="xsd:decimal">?</distanceLon>
+         <resolution xsi:type="xsd:decimal">?</resolution>
+      </ndf:LatLonListSquare>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="44dc55f8-2d5f-4bb1-9085-dfe7456281ef" name="SOAP Response"/><con:assertion type="Simple Contains" id="0c409ec1-0625-4c94-afdb-0e37a96be5a8" name="Contains"><con:configuration><token/><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:wsaConfig mustUnderstand="NONE" version="200508" action="https://graphical.weather.gov/xml/DWMLgen/wsdl/ndfdXML.wsdl#LatLonListSquare"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="request" id="172ef1ef-7835-4ade-a031-4f903c15b777" name="LatLonListSquare - Request 2"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>ndfdXMLBinding</con:interface><con:operation>LatLonListSquare</con:operation><con:request name="LatLonListSquare - Request 2" outgoingWss="" incomingWss="" timeout="" sslKeystore="" useWsAddressing="false" useWsReliableMessaging="false" wssPasswordType="" id="224af12c-6960-46cb-a310-e935c8f64e47"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://graphical.weather.gov:443/xml/SOAP_server/ndfdXMLserver.php</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ndf="https://graphical.weather.gov/xml/DWMLgen/wsdl/ndfdXML.wsdl">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ndf:LatLonListSquare soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+         <centerPointLat xsi:type="xsd:decimal">${#TestCase#CenterLat}</centerPointLat>
+         <centerPointLon xsi:type="xsd:decimal">${#TestCase#CenterLon}</centerPointLon>
+         <distanceLat xsi:type="xsd:decimal">${#TestCase#DistLat}</distanceLat>
+         <distanceLon xsi:type="xsd:decimal">${#TestCase#DistLon}</distanceLon>
+         <resolution xsi:type="xsd:decimal">${#TestCase#Resolution}</resolution>
+      </ndf:LatLonListSquare>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="44dc55f8-2d5f-4bb1-9085-dfe7456281ef" name="SOAP Response"/><con:assertion type="Simple Contains" id="0c409ec1-0625-4c94-afdb-0e37a96be5a8" name="Contains"><con:configuration><token>41.185255,110.000000 41.901519,110.000000 42.609838,110.000000 41.185255,110.957008 41.901519,110.957008 42.609838,110.957008</token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:wsaConfig mustUnderstand="NONE" version="200508" action="https://graphical.weather.gov/xml/DWMLgen/wsdl/ndfdXML.wsdl#LatLonListSquare"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties><con:property><con:name>CenterLat</con:name><con:value>42</con:value></con:property><con:property><con:name>CenterLon</con:name><con:value>110</con:value></con:property><con:property><con:name>DistLat</con:name><con:value>45</con:value></con:property><con:property><con:name>DistLon</con:name><con:value>111</con:value></con:property><con:property><con:name>Resolution</con:name><con:value>100</con:value></con:property></con:properties><con:reportParameters/></con:testCase><con:testCase id="80b8c57a-a635-40b1-a991-481d80666356" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="LatLonListZipCode_TestCase" searchProperties="true" timeout="0"><con:settings/><con:savedRecentRuns>1</con:savedRecentRuns><con:testStep type="request" id="4daa0ccc-90ec-4e21-9d22-e31ed4f81d3e" name="LatLonListZipCode - Request 1"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>ndfdXMLBinding</con:interface><con:operation>LatLonListZipCode</con:operation><con:request name="LatLonListZipCode - Request 1" outgoingWss="" incomingWss="" timeout="" sslKeystore="" useWsAddressing="false" useWsReliableMessaging="false" wssPasswordType="" id="3af29f2e-2423-4cd2-8e56-eded54552049"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://graphical.weather.gov:443/xml/SOAP_server/ndfdXMLserver.php</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ndf="https://graphical.weather.gov/xml/DWMLgen/wsdl/ndfdXML.wsdl">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ndf:LatLonListZipCode soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+         <zipCodeList xsi:type="xsd:string">${#TestCase#zipCode}</zipCodeList>
+      </ndf:LatLonListZipCode>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="7b20b293-1529-4dbb-abe7-5c4f28ef0e32" name="SOAP Response"/><con:assertion type="Simple Contains" id="86075103-65e0-4f56-9ad2-e832b3ca8bfa" name="Contains"><con:configuration><token>34.707,-86.6277</token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="https://graphical.weather.gov/xml/DWMLgen/wsdl/ndfdXML.wsdl#LatLonListZipCode"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties><con:property><con:name>zipCode</con:name><con:value>35816</con:value></con:property></con:properties><con:reportParameters/></con:testCase><con:properties/><con:reportParameters/></con:testSuite><con:mockService id="f2a28b0a-7105-4c13-ad7a-dffe0fac836f" port="8088" path="/" host="localhost" name="ndfdXMLBinding Virtual Service"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.mock.WsdlMockService@require-soap-action">false</con:setting></con:settings><con:properties/><con:constraints><con:congestion>0</con:congestion><con:inputBandwidth>-1</con:inputBandwidth><con:outputBandwidth>-1</con:outputBandwidth><con:maxThreadPoolCapacity>20</con:maxThreadPoolCapacity><con:coreThreadPoolCapacity>5</con:coreThreadPoolCapacity><con:virtError><con:start>0</con:start><con:endless>true</con:endless></con:virtError></con:constraints><con:dataSources/><con:headerValidator type="NONE"/><con:mockOperation name="LatLonListZipCode" id="6674b25c-4e46-4c03-b6b4-674f8a2a55bb" interface="ndfdXMLBinding" operation="LatLonListZipCode"><con:settings/><con:defaultResponse>Response 1</con:defaultResponse><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:dispatchConfig/><con:dispatchXPath/><con:routeScript/><con:response name="Response 1" id="1815d7a5-cc4d-46ae-8b15-51fe9688d312" httpResponseStatus="200" encoding="UTF-8" compressedBodyContent="aced00057372002f636f6d2e657669776172652e736f617075692e696d706c2e737570706f72742e436f6d7072657373656456616c7565000b8b02c748eeab0200025a000a636f6d707265737365645b0004646174617400025b4278700070" dataSource=""><con:settings/><con:responseContent><![CDATA[<soapenv:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ndf="https://graphical.weather.gov/xml/DWMLgen/wsdl/ndfdXML.wsdl">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ndf:LatLonListZipCodeResponse soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+         <listLatLonOut xsi:type="xsd:string">Bonjour</listLatLonOut>
+      </ndf:LatLonListZipCodeResponse>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="https://graphical.weather.gov/xml/DWMLgen/wsdl/ndfdXML.wsdl#LatLonListZipCode"/></con:response></con:mockOperation></con:mockService><con:savedRecentRuns>1</con:savedRecentRuns><con:requirements/><con:properties/><con:wssContainer/><con:databaseConnectionContainer/><con:jmsConnectionContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/><con:reporting><con:xmlTemplates/><con:parameters/></con:reporting><con:authRepository/><con:tags/></con:soapui-project>

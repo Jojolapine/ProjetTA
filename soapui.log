@@ -1,0 +1,8 @@
+2018-08-23 14:21:33,476 WARN  [SoapUI] Missing folder [C:\Users\formation\Desktop\WORKSPACE_PROJET_TA_EZ\MonPremierProjetTA\.\ext] for external libraries
+2018-08-23 14:21:33,702 INFO  [DefaultSoapUICore] initialized soapui-settings from [C:\Users\formation\soapui-settings.xml]
+2018-08-23 14:21:34,098 INFO  [SoapUI] File [C:\Users\formation\Desktop\WORKSPACE_PROJET_TA_EZ\MonPremierProjetTA\file:\C:\Users\FORMAT~1\AppData\Local\Temp\Squash_TA\20180823_142117_458\tests\tests\testTestSuite.ta\Projet_NOAA-readyapi7069888697118684015.xml] does not exist, trying URL instead
+2018-08-23 14:21:34,142 INFO  [WsdlProject] Loaded project from [file:/C:/Users/FORMAT~1/AppData/Local/Temp/Squash_TA/20180823_142117_458/tests/tests/testTestSuite.ta/Projet_NOAA-readyapi7069888697118684015.xml]
+2018-08-23 14:21:34,154 WARN  [WsdlProject] Project 'Projet_NOAA' is from a newer version (5.4.0) of soapUI than this (4.0.1) and parts of it may be incompatible or incorrect. Saving this project with this version of soapUI may cause it to function differently.
+2018-08-23 14:21:34,236 ERROR [WsdlTestCase] Failed to create test step for [Virtual Service Runner]
+2018-08-23 14:21:34,490 ERROR [WsdlTestCase] Failed to create test step for [Copy of Virtual Service Runner]
+2018-08-23 14:21:35,979 WARN  [AbstractSoapVersion] Ignoring validation error: error: cvc-complex-type.3.2.2: Attribute not allowed: encodingStyle@http://schemas.xmlsoap.org/soap/envelope/ in element Envelope@http://schemas.xmlsoap.org/soap/envelope/
